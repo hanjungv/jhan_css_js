@@ -1,0 +1,66 @@
+button, span, p {
+    /*글자 쪼개지게*/
+    word-break: break-all;  
+    /*default 속성*/
+    display:block;
+    font-family: Quicksand;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    font-size:14px;
+}
+button{
+    outline:none;
+}
+
+.container .first{
+    margin-top:20px;
+}
+.container .another{
+    margin-top:10px;
+}
+.container .last{
+    margin: 10px 0;
+}
+
+/*social button*/
+.social-button{
+    width:30px;
+    height:30px;
+    display:inline-block;
+    border-radius:5px;
+
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.social-button.facebook{
+    background-color:#3b5998;
+    border:1px solid #3b5998;
+    background-image: url('/css/img/facebook-logo.png');
+}
+.social-button.youtube{
+    background-color:#c4302b;
+    border:1px solid #c4302b;
+    background-image: url('/css/img/youtube-logo.png');
+}
+.social-button.evernote{
+    background-color:#719D0F;
+    border:1px solid #719D0F;
+    background-image: url('/css/img/evernote-logo.png');
+}
+.social-button.dropbox{
+    background-color:#3d9ae8;
+    border:1px solid #3d9ae8;
+    background-image: url('/css/img/dropbox-logo.png');
+}
+.social-button.google{
+    background-color:#d62d20;
+    border:1px solid #d62d20;
+    background-image: url('/css/img/google-logo.png');
+}
+.social-button.twitter{
+    background-color:#4099FF;
+    border:1px solid #4099FF;
+    background-image: url('/css/img/twitter-logo.png');
+}
