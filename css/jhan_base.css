@@ -28,6 +28,14 @@ button {
     margin: 10px 0;
 }
 
+.appearance-none {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
 
 /*social button*/
 
@@ -92,7 +100,9 @@ button {
     position: relative;
 }
 
+
 /*filebox button, label 있는것*/
+
 .filebox_button_label input[type="file"] {
     position: absolute;
     width: 1px;
@@ -137,7 +147,9 @@ button {
     appearance: none;
 }
 
+
 /*filebox label 있는것*/
+
 .filebox_label {}
 
 .filebox_label label {
@@ -149,7 +161,7 @@ button {
     line-height: 27px;
     border-radius: 5px;
     background-color: turquoise;
-    color:white;
+    color: white;
 }
 
 .filebox_label input {
@@ -161,4 +173,46 @@ button {
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+}
+
+
+/*input checkbox design*/
+
+.style-checkbox label {
+    display: inline-block;
+    border: 1px solid #c83636;
+    color: black;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.check-with-label:checked + .label-for-check {
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}
+
+
+/*input radio design*/
+
+.style-radio label {
+    display: inline-block;
+    border: 1px solid #c83636;
+    color: black;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.radio-with-label:checked + .label-for-radio {
+    font-weight: bold;
+    background-color: black;
+    color: white;
 }
