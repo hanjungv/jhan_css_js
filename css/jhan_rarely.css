@@ -45,7 +45,18 @@
 .anchor_button.red:active {
     border-bottom: 2px solid #c1370e;
 }
-.anchor_button:hover{
-    color:white;
+
+.anchor_button:hover {
+    color: white;
     text-decoration: none;
+}
+
+.footer1 {
+    display: block;
+    position: fixed;
+    bottom: 0px;
+    height: 100px;
+    text-align: center;
+    background-color: #ccc;
+    padding-top: 12px;
 }
