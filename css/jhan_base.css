@@ -1,66 +1,164 @@
-button, span, p {
+button,
+span,
+p {
     /*글자 쪼개지게*/
-    word-break: break-all;  
+    word-break: break-all;
     /*default 속성*/
-    display:block;
+    display: block;
     font-family: Quicksand;
-    font-style:normal;
-    font-variant:normal;
-    font-weight:normal;
-    font-size:14px;
-}
-button{
-    outline:none;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 14px;
 }
 
-.container .first{
-    margin-top:20px;
+button {
+    outline: none;
 }
-.container .another{
-    margin-top:10px;
+
+.container .first {
+    margin-top: 20px;
 }
-.container .last{
+
+.container .another {
+    margin-top: 10px;
+}
+
+.container .last {
     margin: 10px 0;
 }
 
-/*social button*/
-.social-button{
-    width:30px;
-    height:30px;
-    display:inline-block;
-    border-radius:5px;
 
+/*social button*/
+
+.social-button {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 5px;
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: center;
 }
-.social-button.facebook{
-    background-color:#3b5998;
-    border:1px solid #3b5998;
+
+.social-button.facebook {
+    background-color: #3b5998;
+    border: 1px solid #3b5998;
     background-image: url('/css/img/facebook-logo.png');
 }
-.social-button.youtube{
-    background-color:#c4302b;
-    border:1px solid #c4302b;
+
+.social-button.youtube {
+    background-color: #c4302b;
+    border: 1px solid #c4302b;
     background-image: url('/css/img/youtube-logo.png');
 }
-.social-button.evernote{
-    background-color:#719D0F;
-    border:1px solid #719D0F;
+
+.social-button.evernote {
+    background-color: #719D0F;
+    border: 1px solid #719D0F;
     background-image: url('/css/img/evernote-logo.png');
 }
-.social-button.dropbox{
-    background-color:#3d9ae8;
-    border:1px solid #3d9ae8;
+
+.social-button.dropbox {
+    background-color: #3d9ae8;
+    border: 1px solid #3d9ae8;
     background-image: url('/css/img/dropbox-logo.png');
 }
-.social-button.google{
-    background-color:#d62d20;
-    border:1px solid #d62d20;
+
+.social-button.google {
+    background-color: #d62d20;
+    border: 1px solid #d62d20;
     background-image: url('/css/img/google-logo.png');
 }
-.social-button.twitter{
-    background-color:#4099FF;
-    border:1px solid #4099FF;
+
+.social-button.twitter {
+    background-color: #4099FF;
+    border: 1px solid #4099FF;
     background-image: url('/css/img/twitter-logo.png');
+}
+
+
+/*textarea, input박스*/
+
+.resize-none {
+    resize: none;
+}
+
+.text-input {
+    width: 300px;
+    height: 30px;
+    font-size: 15px;
+    display: block;
+    position: relative;
+}
+
+/*filebox button, label 있는것*/
+.filebox_button_label input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.filebox_button_label label {
+    display: inline-block;
+    padding: .5em .75em;
+    color: #999;
+    margin-bottom: 0px;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: #fdfdfd;
+    cursor: pointer;
+    border: 1px solid #ebebeb;
+    border-bottom-color: #e2e2e2;
+    border-radius: .25em;
+}
+
+.filebox_button_label .upload-name {
+    display: inline-block;
+    padding: .5em .75em;
+    /* label의 패딩값과 일치 */
+    font-size: inherit;
+    font-family: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: #f5f5f5;
+    border: 1px solid #ebebeb;
+    border-bottom-color: #e2e2e2;
+    border-radius: .25em;
+    -webkit-appearance: none;
+    /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/*filebox label 있는것*/
+.filebox_label {}
+
+.filebox_label label {
+    border: 2px solid turquoise;
+    width: 300px;
+    text-align: center;
+    cursor: pointer;
+    height: 30px;
+    line-height: 27px;
+    border-radius: 5px;
+    background-color: turquoise;
+    color:white;
+}
+
+.filebox_label input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }

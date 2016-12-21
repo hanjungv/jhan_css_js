@@ -37,6 +37,7 @@
         <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
         <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
         <!--js_personal-->
+        <script src="/js/jhan_javascript.js"></script>
 
         
         
@@ -48,10 +49,17 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         
+        <!--jquery-ui-->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
         <!--css_personal-->
         <link rel="stylesheet" href="/css/jhan_base.css">
         <link rel="stylesheet" href="/css/jhan_rarely.css">
 
+        
+        <style>
+            
+        </style>
     </head>
     <body>
         <div class = 'container first'>
@@ -59,8 +67,97 @@
                 <p>CSS, JS, JQuery, Bootstrap. input type = "text, email, file, radio ......."</p>
             </div>
         </div>
+        <br/>
         <div class = 'container another'>
+            <h3>기본</h3>
+            <input type = 'text' name ='text1'/>
+            <br/><br/>
+            <input type = 'email' name = 'email1'/>
+            <br/><br/>
+            <input type = 'password' name = 'password1'/>
+            <br/><br/>
+            <input type ='date' name = 'date1'/>
+            <br/><br/>
+            <textarea name = 'default-textarea'>hello! world!</textarea>
+            <br/><br/>
+            <input type = 'file' name = 'file1'/>
+            <br/><br/>
+            <input type = 'checkbox' name = 'checkbox1'/>
+            <input type = 'checkbox' name = 'checkbox2'/>
+            <input type = 'checkbox' name = 'checkbox3'/>
+            <input type = 'checkbox' name = 'checkbox4'/>
+            <br/><br/>
+            <input type = 'radio' name = 'radio1'/>
+            <input type = 'radio' name = 'radio1'/>
+            <input type = 'radio' name = 'radio1'/>
+            <br/><br/>
+            <input type = 'submit' value = 'submit button'/>
+        </div>
+        <br/>
+        <div class = 'container another'>
+            <h3>속성 주기</h3>
+            <p>저 속성 그대로 사용하는 경우는 거의 없을 것(안 이쁘기 때문에)</p>
+            <p>1. input type = 'text', 'email', 'password'  : 그냥 있는대로 속성이 잘 먹음, 없앨 것도 크게 없음. validation을 자동으로 해준다는 장점</p>
+            <input type = 'text' name = 'text2' class = 'text-input'/>
+            <br/>
+            <p>2. input type = 'date' : 달력을 선택해 주는 input, 하지만 IE, firefox, safari 지원을 안한다. 모바일은 걍 밀고가고(사실 더 편한 방법이 있는지 잘 모르겠..)웹에선 jquery date picker</p>
+            <input type = 'text' id = 'datepicker1' class = 'datepicker'/>
+            <input type = 'text' id = 'datepicker2' class = 'datepicker'/>
+            <br/><br/>
+            <p>3. textarea : 이것도 말은 잘 듣지만 resize가 가능한 상태가 default이므로 수정해주자</p>
+            <textarea class = 'resize-none'></textarea>
+            <br/><br/>
+            <p>4. input type = 'file' : 말 드럽게 안듣는다. 사람들이 원하는 모양도 각자 다름.</p>
+            <p>1> 버튼형</p>
+            <div class="filebox_button_label">
+              <input class="upload-name" value="파일선택" disabled="disabled">
+              <label for="ex_filename">업로드</label> 
+              <input type="file" id="ex_filename" class="upload-hidden"/> 
+            </div>
+            <script>
+                 $('.filebox_button_label .upload-hidden').change(function () { 
+                    if (document.FileReader) { // modern browser
+                        var filename = $(this)[0].files[0].name;
+                    } 
+                    else { // old IE
+                        var filename = $(this).val().split('/').pop().split('\\').pop();
+                    }
+                    $(this).siblings('.upload-name').val(filename);
+                });
+            </script>
+            <br/>
+            <p>2> 라벨형</p>
+            <div class="filebox_label">
+                <label for="ex_filename2" id = 'filename_label2'>업로드버튼업로드버튼!</label>
+                <input type="file" id="ex_filename2" name = "file" class="upload-hidden" required>
+            </div>
+            <script>
+                $(document).ready(function(){
+                var fileTarget = $('.filebox_label .upload-hidden');
+                fileTarget.on('change', function(){  
+                  if(window.FileReader){  
+                    var filename = $(this)[0].files[0].name;
+                  } 
+                  else { 
+                    var filename = $(this).val().split('/').pop().split('\\').pop();
+                  }
+                  $(this).siblings('#filename_label2').text(filename);
+                });
+              });
+            </script>
+            <p>등등 많은데... 나중에 필요할 때 찾아서 쓰자. 이미지 추가하는 법 및 참조한곳 : http://webdir.tistory.com/435 </p>
+            <p>5. input type = 'checkbox' : </p>
+            <div class = 'style-checkbox'>
+                <input type = 'checkbox' name = 'checkbox5'/>
+                <input type = 'checkbox' name = 'checkbox6'/>
+                <input type = 'checkbox' name = 'checkbox7'/>
+                <input type = 'checkbox' name = 'checkbox8'/>
+            </div>
+        </div>
         
+        <br/><br/><br/>
+        <div class = 'container last'>
+            <p>last_div</p>
         </div>
     </body>
 </html>
