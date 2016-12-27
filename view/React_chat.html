@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My First React Example</title>
+    <link rel='stylesheet' href='/css/chat_window.css'>
+    <link rel='stylesheet' href='/css/chat_base.css'>
+    <style>
+        .chat-window {
+            display: block;
+            width: 400px;
+            height: 100%;
+            text-align: center;
+            margin: auto;
+            background-color: #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chat-window" class='chat-window'></div>
+
+    <script src="https://fb.me/react-15.0.0.js"></script>
+    <script src="https://fb.me/react-dom-15.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+    <script type="text/babel">
+
+        let show = React.createClass({
+           render: function(){
+               <Message_you_defalult/>
+           } 
+        });
+
+        let chat = React.createClass({
+            render: function(){
+                return (
+                    <div className='message-you'>
+                        <div className='avatar'>
+                            <img src='/css/img/img_user_null.png' alt='' />
+                            <strong>{this.props.name}</strong><em>{this.props.phone}</em>
+                        </div>
+                        <div className='balloon'>
+                            <p className='comment'>Helloworld</p>
+                            <div className='buttons button-2'>
+                                <button>다시입력</button>
+                                <button><strong>맞아요</strong></button>
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+            
+        });
+
+
+        let Message_you_default = React.createClass({
+            getInitialState: function(){
+                return{
+                    contactData:[
+                        {name:1, phone:2},
+                        {name:3, phone:4},
+                        {name:5, phone:6},
+                        {name:7, phone:8}
+                    ]
+                };
+            },
+            render: function() { 
+                var chatchat = this.state.contactData.map((contact,i) => {
+                    return <chat name = {contact.name} phone={contact.phone} key ={i}/>
+                });
+                return(
+                    <div>
+                        {chatchat}
+                    </div>
+                );
+            } 
+        });
+
+
+        ReactDOM.render(
+            <div>
+                <Message_you_default/>
+            </div>
+        ,document.getElementById('chat-window') );
+    </script>
+</body>
+
+</html>
+
+<!--
+
+
+-->

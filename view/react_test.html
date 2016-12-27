@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My First React Example</title>
+    <link rel='stylesheet' href='/css/chat_window.css'>
+    <link rel='stylesheet' href='/css/chat_base.css'>
+    <style>
+        .chat-window {
+            display: block;
+            width: 400px;
+            height: 100%;
+            text-align: center;
+            margin: auto;
+            background-color: #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root" class='chat-window'></div>
+
+    <script src="https://fb.me/react-15.0.0.js"></script>
+    <script src="https://fb.me/react-dom-15.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+    <script type="text/babel">                
+        var User = React.createClass({
+          propTypes: {
+            name: React.PropTypes.string.isRequired,
+            id:   React.PropTypes.number.isRequired
+          },
+          render() {
+            return (
+                <div className='message-you'>
+                    <div className='avatar'>
+                        <img src='/css/img/img_user_null.png' alt='' />
+                        <strong>{this.props.id}</strong><em>{this.props.name}</em>
+                    </div>
+                    <div className='balloon'>
+                        <p className='comment'>Helloworld</p>
+                        <div className='buttons button-2'>
+                            <button onClick = {this.props.functio}>다시입력</button>
+                            <button><strong>맞아요</strong></button>
+                        </div>
+                    </div>
+                </div>
+            );
+          }
+        });
+
+        var newobj = [{id:4,name:'4444'}];
+
+        var Users = React.createClass({
+            getInitialState() {
+                return {
+                    users: [
+                            {id: 1, name: 'foo'}, 
+                            {id: 2, name: 'bar'}
+                        ]
+                    }
+                },
+            functio(){
+                this.setState({
+                   users: this.state.users.concat([{id:3,name:'33333'}])
+                });
+            },
+            render() {
+                var users = this.state.users.map((user) => {
+                return <User id={user.id} name={user.name} key={user.id}/>
+            });
+            return (
+                <div>
+                    {users}
+                </div>
+            );
+            }
+        });
+        ReactDOM.render(<Users/>,document.getElementById('root'));
+    </script>
+</body>
+</html>
